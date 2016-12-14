@@ -1,6 +1,6 @@
 # AwesomeTodos
 
- This is a learning project to gather experiences with react-native and redux
+ This is a learning project to gather experiences with react-native, redux and snapshot testing with jest
 
 #### clone repo
 ```
