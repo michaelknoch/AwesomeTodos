@@ -12,7 +12,7 @@ git clone https://github.com/michaelknoch/AwesomeTodos.git
 npm i
 ```
 
-#### run
+#### run in xcode simulator
 ```
-npm start
+react-native run-ios
 ```
