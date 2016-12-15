@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Swipeout from 'react-native-swipeout';
 import { ListView, StyleSheet, View, Text, TouchableHighlight } from 'react-native';
 
 import { addTodo, removeTodo } from '../actions/todosActions';
@@ -7,16 +8,20 @@ import { addTodo, removeTodo } from '../actions/todosActions';
 class TodosList extends Component {
 
     render() {
-        const { todos, addTodo, removeTodo } = this.props;
+        const { todos, removeTodo } = this.props;
         const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
         this.state = {
             dataSource: ds.cloneWithRows(todos),
         };
 
-        const onPress = () => {
-            addTodo('test');
-        };
+        // Buttons
+        const swipeoutBtns = [
+            {
+                text: 'Button',
+                onPress: () => { console.info('dosomething'); },
+            },
+        ];
 
         const styles = StyleSheet.create({
             wrapper: {
@@ -27,23 +32,23 @@ class TodosList extends Component {
                 height: 50,
                 justifyContent: 'center',
                 padding: 10,
-                backgroundColor: '#F6F6F6',
+                backgroundColor: 'rgb(50,50,50)',
             },
         });
 
         return (
             <View style={{ flex: 1 }}>
-                <TouchableHighlight onPress={onPress}>
-                    <ListView
-                        styles={styles.wrapper}
-                        dataSource={this.state.dataSource}
-                        renderRow={rowData =>
+                <ListView
+                    styles={styles.wrapper}
+                    dataSource={this.state.dataSource}
+                    renderRow={rowData =>
+                        <Swipeout left={swipeoutBtns}>
                             <View style={styles.row}>
-                                <Text>{rowData}</Text>
+                                <Text style={{ color: 'white' }}>{rowData}</Text>
                             </View>
-                        }
-                    />
-                </TouchableHighlight>
+                        </Swipeout>
+                    }
+                />
             </View>
         );
     }
@@ -54,13 +59,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    addTodo: (payload) => {
-        dispatch(addTodo(payload));
-    },
     removeTodo: (index) => {
         dispatch(removeTodo(index));
     },
-
 });
 
 export default connect(
