@@ -55,7 +55,7 @@ class TodosList extends Component {
 }
 
 const mapStateToProps = state => ({
-    todos: state.todos.todos,
+    todos: state.todosReducer.todos,
 });
 
 const mapDispatchToProps = dispatch => ({
