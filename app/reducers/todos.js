@@ -4,7 +4,7 @@ const initialState = {
     todos: ['initial', 'todos'],
 };
 
-export default function todos(state = initialState, action = {}) {
+export default function todosReducer(state = initialState, action = {}) {
     switch (action.type) {
         case types.ADD_TODO:
             return {
