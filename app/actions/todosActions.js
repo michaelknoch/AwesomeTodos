@@ -5,7 +5,7 @@ export const addTodo = payload => ({
     type: types.ADD_TODO,
 });
 
-export const removeTodo = index => ({
-    index,
+export const removeTodo = id => ({
+    id,
     type: types.REMOVE_TODO,
 });
