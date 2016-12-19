@@ -1,12 +1,11 @@
 import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Index from '../index.android';
-
+import TodosList from '../app/views/todosList';
 
 it('renders correctly', () => {
     const tree = renderer.create(
-        <Index />
-    ).toJSON();
+        <TodosList />
+    ).toJSON();;
     expect(tree).toMatchSnapshot();
 });
