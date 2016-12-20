@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/michaelknoch/AwesomeTodos.svg?branch=master)](https://travis-ci.org/michaelknoch/AwesomeTodos)
+
 # AwesomeTodos
 
  This is a learning project to gather experiences with react-native, redux and snapshot testing with jest :metal:
