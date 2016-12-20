@@ -1,3 +1,63 @@
+exports[`headlines should render H1 correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "white",
+      },
+      Object {
+        "fontSize": 70,
+      },
+      undefined,
+    ]
+  }>
+  headline 1
+</Text>
+`;
+
+exports[`headlines should render H2 correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "white",
+      },
+      Object {
+        "fontSize": 50,
+      },
+      undefined,
+    ]
+  }>
+  headline 2
+</Text>
+`;
+
+exports[`headlines should render H3 correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "white",
+      },
+      Object {
+        "fontSize": 30,
+      },
+      undefined,
+    ]
+  }>
+  headline 3
+</Text>
+`;
+
 exports[`swipeList component should render correctly 1`] = `
 <View
   style={
