@@ -1,4 +1,4 @@
-exports[`todos reducer should render 1`] = `
+exports[`swipeList component should render correctly 1`] = `
 <View
   style={
     Object {
