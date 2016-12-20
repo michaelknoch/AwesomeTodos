@@ -25,7 +25,7 @@ export default class App extends Component {
                     barStyle='default'
                 />
                 <Provider store={store}>
-                    <Swiper ref={(c) => { this.swiper = c; }} showsButtons={false} loop={false} activeDotColor={'black'}>
+                    <Swiper ref={(c) => { this.swiper = c; }} showsButtons={false} loop={false} dotColor={'#545454'} activeDotColor={'#9c9c9c'}>
                         <View style={{ flex: 1, paddingTop: 25 }}>
                             <TodosList />
                         </View>
