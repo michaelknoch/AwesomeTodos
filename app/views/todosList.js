@@ -1,33 +1,31 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-
+import React, { PropTypes } from 'react';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
-import SwipeList from '../components/swipeList';
 
 import { removeTodo } from '../actions/todosActions';
-
+import SwipeList from '../components/swipeList';
 import { H2 } from '../components/headlines';
 
-class TodosList extends Component {
+const propTypes = {
+    todos: PropTypes.array.isRequired,
+    removeTodo: PropTypes.func.isRequired,
+};
 
-    render() {
-        const { todos, removeTodo } = this.props;
+const TodosList = ({ todos, removeTodo }) => {
+    const style = {
+        headline: {
+            paddingTop: 20,
+            paddingBottom: 15,
+        },
+    };
 
-        const style = {
-            headline: {
-                paddingTop: 20,
-                paddingBottom: 15,
-            },
-        };
-
-        return (
-            <View style={{ flex: 1 }}>
-                <H2 style={style.headline}>Do this, asap!</H2>
-                <SwipeList todos={todos} removeTodo={removeTodo} />
-            </View>
-        );
-    }
-}
+    return (
+        <View style={{ flex: 1 }}>
+            <H2 style={style.headline}>Do this, asap!</H2>
+            <SwipeList todos={todos} removeTodo={removeTodo} />
+        </View>
+    );
+};
 
 const mapStateToProps = state => ({
     todos: state.todosReducer.todos,
@@ -43,3 +41,5 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(TodosList);
+
+TodosList.propTypes = propTypes;
