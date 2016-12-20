@@ -19,18 +19,23 @@ const styles = StyleSheet.create({
     },
 });
 
-export const H1 = ({ children, style }) => (
+const H1 = ({ children, style }) => (
     <Text style={[styles.headline, styles.h1, style]}>{children}</Text>
 );
 
-export const H2 = ({ children, style }) => (
+const H2 = ({ children, style }) => (
     <Text style={[styles.headline, styles.h2, style]}>{children}</Text>
 );
 
-export const H3 = ({ children, style }) => (
+const H3 = ({ children, style }) => (
     <Text style={[styles.headline, styles.h3, style]}>{children}</Text>
 );
 
 H1.propTypes = propTypes;
 H2.propTypes = propTypes;
 H3.propTypes = propTypes;
+
+
+module.exports = {
+    H1, H2, H3,
+};
