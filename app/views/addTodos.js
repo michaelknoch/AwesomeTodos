@@ -41,6 +41,8 @@ class AddTodos extends Component {
         };
 
         const onPress = () => {
+            if (!this.state.text) return;
+
             addTodo(this.state.text);
             swipe(-1);
             this.input.clear();
