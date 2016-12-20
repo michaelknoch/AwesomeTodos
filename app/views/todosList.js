@@ -20,8 +20,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    removeTodo: (index) => {
-        dispatch(removeTodo(index));
+    removeTodo: (id) => {
+        dispatch(removeTodo(id));
     },
 });
 

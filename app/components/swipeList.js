@@ -17,39 +17,39 @@ const styles = StyleSheet.create({
 
 class SwipeList extends Component {
 
-    renderRow(rowData) {
-        const swipeoutBtns = [
-            {
-                text: 'Delete',
-                onPress: () => {
-                    debugger;
-                    console.info(rowData.id);
-                },
-            },
-        ];
-
-        return (
-            <Swipeout left={swipeoutBtns}>
-                <View style={styles.row}>
-                    <Text style={{ color: 'white' }}>{rowData}</Text>
-                </View>
-            </Swipeout>
-        );
-    }
 
     render() {
+        const { removeTodo } = this.props;
         const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
         this.state = {
             dataSource: ds.cloneWithRows(this.props.todos),
         };
 
+        const renderRow = (rowData) => {
+            const swipeoutBtns = [
+                {
+                    text: 'Delete',
+                    onPress: () => {
+                        this.props.removeTodo(rowData.id);
+                    },
+                },
+            ];
+
+            return (
+                <Swipeout left={swipeoutBtns}>
+                    <View style={styles.row}>
+                        <Text style={{ color: 'white' }}>{rowData.text}</Text>
+                    </View>
+                </Swipeout>
+            );
+        }
 
         return (
             <View style={{ flex: 1 }}>
                 <ListView
                     styles={styles.wrapper}
                     dataSource={this.state.dataSource}
-                    renderRow={this.renderRow}
+                    renderRow={renderRow}
                 />
             </View>
         );
