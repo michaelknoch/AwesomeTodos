@@ -1,9 +1,9 @@
 import todosReducer from '../app/reducers/todos';
-import * as actions from '../app/actions'
+import * as actions from '../app/actions';
 
 describe('todos reducer', () => {
     const initialState = {
-        todos: ['initial', 'todos'],
+        todos: [{ id: 0, text: 'initial' }, { id: 1, text: 'todos' }],
     };
 
     it('should return the initial state', () => {
@@ -12,20 +12,11 @@ describe('todos reducer', () => {
         ).toEqual(initialState);
     });
 
-    it('should add a todo', () => {
-        expect(
-            todosReducer(initialState, actions.addTodo('putzen'))
-        ).toEqual({
-            todos: ['initial', 'todos', 'putzen'],
-        });
-    });
-
     it('should remove a todo', () => {
         expect(
             todosReducer(initialState, actions.removeTodo(0))
         ).toEqual({
-            todos: ['todos'],
+            todos: [{ id: 1, text: 'todos' }],
         });
     });
-
 });
