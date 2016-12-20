@@ -58,6 +58,28 @@ exports[`headlines should render H3 correctly 1`] = `
 </Text>
 `;
 
+exports[`headlines should render H3 correctly 2`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "white",
+      },
+      Object {
+        "fontSize": 30,
+      },
+      Object {
+        "paddingTop": 50,
+      },
+    ]
+  }>
+  headline 3
+</Text>
+`;
+
 exports[`swipeList component should render correctly 1`] = `
 <View
   style={

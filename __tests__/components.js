@@ -39,4 +39,11 @@ describe('headlines', () => {
         ).toJSON();
         expect(tree).toMatchSnapshot();
     });
+
+    it('should render H3 correctly', () => {
+        const tree = renderer.create(
+            <H3 style={{ paddingTop: 50 }}>headline 3</H3>
+        ).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
 });
