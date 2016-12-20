@@ -12,7 +12,7 @@ class AddTodos extends Component {
     }
 
     render() {
-        const { addTodo } = this.props;
+        const { addTodo, swipe } = this.props;
         const style = {
             wrapper: {
                 flex: 1,
@@ -39,11 +39,12 @@ class AddTodos extends Component {
                 marginTop: 15,
                 padding: 8,
                 paddingLeft: 15,
-            }
+            },
         };
 
         const onPress = () => {
             addTodo(this.state.text);
+            swipe(-1);
         };
 
         return (

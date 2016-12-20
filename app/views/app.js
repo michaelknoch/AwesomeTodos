@@ -11,6 +11,11 @@ import AddTodos from './addTodos';
 const store = createStore(reducers);
 
 export default class App extends Component {
+
+    jumpToSlide(value) {
+        this.swiper.scrollBy(value); // n is the number of places to move the swipe, eg: 2, -1, etc.
+    }
+
     render() {
         return (
 
@@ -20,12 +25,12 @@ export default class App extends Component {
                     barStyle='default'
                 />
                 <Provider store={store}>
-                    <Swiper showsButtons={false} loop={false} activeDotColor={'black'}>
+                    <Swiper ref={(c) => { this.swiper = c; }} showsButtons={false} loop={false} activeDotColor={'black'}>
                         <View style={{ flex: 1, paddingTop: 25 }}>
                             <TodosList />
                         </View>
                         <View style={{ flex: 1, paddingTop: 25 }}>
-                            <AddTodos />
+                            <AddTodos swipe={slide => this.jumpToSlide(slide)} />
                         </View>
                     </Swiper>
                 </Provider>
