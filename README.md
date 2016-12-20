@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/michaelknoch/AwesomeTodos.svg?branch=master)](https://travis-ci.org/michaelknoch/AwesomeTodos)
+[![Coverage Status](https://coveralls.io/repos/github/michaelknoch/AwesomeTodos/badge.svg?branch=master)](https://coveralls.io/github/michaelknoch/AwesomeTodos?branch=master)
 
 # AwesomeTodos
 
