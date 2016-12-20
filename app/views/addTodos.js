@@ -57,6 +57,7 @@ class AddTodos extends Component {
             <View style={style.wrapper}>
                 <H2 style={style.headline}>Whats up?</H2>
                 <TextInput
+                    keyboardAppearance={'dark'}
                     ref={(input) => { this.input = input; }}
                     autoFocus
                     multiline
