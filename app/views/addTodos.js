@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { View, TextInput, Text, TouchableHighlight } from 'react-native';
 import { addTodo } from '../actions/todosActions';
 import { H2 } from '../components/headlines';
+
+const propTypes = {
+    swipe: PropTypes.func.isRequired,
+    addTodo: PropTypes.func.isRequired,
+};
 
 class AddTodos extends Component {
 
@@ -71,6 +76,8 @@ const mapDispatchToProps = dispatch => ({
         dispatch(addTodo(payload));
     },
 });
+
+AddTodos.propTypes = propTypes;
 
 export default connect(
     null,
