@@ -43,12 +43,15 @@ class AddTodos extends Component {
         const onPress = () => {
             addTodo(this.state.text);
             swipe(-1);
+            this.input.clear();
         };
 
         return (
             <View style={style.wrapper}>
                 <H2 style={style.headline}>Whats up?</H2>
                 <TextInput
+                    ref={(input) => { this.input = input; }}
+                    autoFocus
                     multiline
                     style={style.input}
                     onChangeText={text => this.setState({ text })}
