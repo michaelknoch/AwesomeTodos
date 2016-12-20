@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, TextInput, Text, TouchableHighlight } from 'react-native';
-
 import { addTodo } from '../actions/todosActions';
+import { H2 } from '../components/headlines';
 
 class AddTodos extends Component {
 
@@ -20,8 +20,6 @@ class AddTodos extends Component {
                 padding: 30,
             },
             headline: {
-                fontSize: 50,
-                color: 'white',
                 paddingTop: 80,
                 paddingBottom: 15,
             },
@@ -49,7 +47,7 @@ class AddTodos extends Component {
 
         return (
             <View style={style.wrapper}>
-                <Text style={style.headline}>Whats up?</Text>
+                <H2 style={style.headline}>Whats up?</H2>
                 <TextInput
                     multiline
                     style={style.input}

@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
 
 class SwipeList extends Component {
 
-
     render() {
         const { removeTodo } = this.props;
         const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
@@ -28,7 +27,8 @@ class SwipeList extends Component {
         const renderRow = (rowData) => {
             const swipeoutBtns = [
                 {
-                    text: 'Delete',
+                    text: 'X',
+                    backgroundColor: '#e74c3c',
                     onPress: () => {
                         this.props.removeTodo(rowData.id);
                     },
@@ -36,7 +36,7 @@ class SwipeList extends Component {
             ];
 
             return (
-                <Swipeout left={swipeoutBtns}>
+                <Swipeout backgroundColor={'rgb(50,50,50)'} autoClose left={swipeoutBtns}>
                     <View style={styles.row}>
                         <Text style={{ color: 'white' }}>{rowData.text}</Text>
                     </View>
