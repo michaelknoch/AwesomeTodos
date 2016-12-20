@@ -10,14 +10,22 @@ const initialState = {
 export default function todosReducer(state = initialState, action = {}) {
     switch (action.type) {
         case types.ADD_TODO:
-            return {
-                todos: [...state.todos, action.payload],
-            };
+            return addTodo(state, action.payload)
         case types.REMOVE_TODO:
-            return removeTodo(state, action.id)
+            return removeTodo(state, action.payload)
         default:
             return state;
     }
+}
+
+function addTodo(state, payload) {
+    const todo = {
+        id: state.todos.length,
+        text: payload
+    };
+    return {
+        todos: [...state.todos, todo],
+    };
 }
 
 function removeTodo(state, id) {

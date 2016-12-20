@@ -1,11 +1,11 @@
 import * as types from './actionTypes';
 
 export const addTodo = payload => ({
-    payload: { text: payload, id: Math.round(Math.random() * 100000000) },
+    payload,
     type: types.ADD_TODO,
 });
 
-export const removeTodo = id => ({
-    id,
+export const removeTodo = payload => ({
+    payload,
     type: types.REMOVE_TODO,
 });
