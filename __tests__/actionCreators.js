@@ -12,12 +12,12 @@ describe('actions', () => {
     });
 
     it('should create an action to remove a todo', () => {
-        const index = 3;
+        const id = 3;
         const expectedAction = {
-            index,
+            id,
             type: types.REMOVE_TODO,
         };
-        expect(actions.removeTodo(index)).toEqual(expectedAction);
+        expect(actions.removeTodo(id)).toEqual(expectedAction);
     });
 
 });
