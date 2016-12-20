@@ -12,6 +12,18 @@ describe('todos reducer', () => {
         ).toEqual(initialState);
     });
 
+    it('should add a todo', () => {
+        expect(
+            todosReducer(initialState, actions.addTodo('putzen'))
+        ).toEqual({
+            todos: [
+                { id: 0, text: 'initial' },
+                { id: 1, text: 'todos' },
+                { id: 2, text: 'putzen' },
+            ],
+        });
+    });
+
     it('should remove a todo', () => {
         expect(
             todosReducer(initialState, actions.removeTodo(0))
