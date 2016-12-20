@@ -40,6 +40,11 @@ exports[`swipeList component should render correctly 1`] = `
             "overflow": "hidden",
           },
           undefined,
+          Array [
+            Object {
+              "backgroundColor": "rgb(50,50,50)",
+            },
+          ],
         ]
       }>
       <View
@@ -97,6 +102,11 @@ exports[`swipeList component should render correctly 1`] = `
             "overflow": "hidden",
           },
           undefined,
+          Array [
+            Object {
+              "backgroundColor": "rgb(50,50,50)",
+            },
+          ],
         ]
       }>
       <View
