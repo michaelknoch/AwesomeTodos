@@ -11,7 +11,7 @@ const propTypes = {
     removeTodo: PropTypes.func.isRequired,
 };
 
-const TodosList = ({ todos, removeTodo }) => {
+const TodosList = props => {
     const style = {
         headline: {
             paddingTop: 20,
@@ -22,7 +22,7 @@ const TodosList = ({ todos, removeTodo }) => {
     return (
         <View style={{ flex: 1 }}>
             <H2 style={style.headline}>Do this, asap!</H2>
-            <SwipeList todos={todos} removeTodo={removeTodo} />
+            <SwipeList todos={props.todos} removeTodo={props.removeTodo} />
         </View>
     );
 };

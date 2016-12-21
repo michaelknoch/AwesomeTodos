@@ -17,7 +17,6 @@ class AddTodos extends Component {
     }
 
     render() {
-        const { addTodo, swipe } = this.props;
         const style = {
             wrapper: {
                 flex: 1,
@@ -48,8 +47,8 @@ class AddTodos extends Component {
         const onPress = () => {
             if (!this.state.text) return;
 
-            addTodo(this.state.text);
-            swipe(-1);
+            this.props.addTodo(this.state.text);
+            this.props.swipe(-1);
             this.input.clear();
         };
 
